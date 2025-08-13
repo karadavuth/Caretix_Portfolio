@@ -1,4 +1,4 @@
-# Mendix Developer Portfolio
+# 3 Python projects Portfolio
 
 Een complete portfolio van 3 Python projecten:
 
