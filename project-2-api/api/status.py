@@ -1,4 +1,8 @@
 from django.http import JsonResponse
 
 def handler(request):
-    return JsonResponse({"status": "API is live"})
+    return JsonResponse({
+        "status": "API is live",
+        "message": "HealClinics Django Backend on Vercel",
+        "timestamp": "2025-08-16"
+    })
