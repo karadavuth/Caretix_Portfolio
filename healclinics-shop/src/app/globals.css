@@ -1,0 +1,274 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Gymshark-inspired Color Palette */
+:root {
+  --healclinics-black: #0a0a0a;
+  --healclinics-white: #ffffff;
+  --healclinics-gray-50: #f9fafb;
+  --healclinics-gray-100: #f3f4f6;
+  --healclinics-gray-900: #111827;
+  --healclinics-accent: #059669;
+  --healclinics-accent-light: #10b981;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-gray-900;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.5;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Gymshark-style Buttons */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed font-medium;
+  }
+  
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors font-medium;
+  }
+  
+  .btn-accent {
+    @apply bg-green-600 hover:bg-green-700 text-white font-medium px-8 py-4 text-sm uppercase tracking-wider transition-all duration-200;
+  }
+
+  /* Gymshark-style Product Cards */
+  .product-card-gymshark {
+    @apply bg-white cursor-pointer transition-all duration-300;
+  }
+
+  /* Navigation Styling */
+  .nav-link {
+    @apply text-gray-900 hover:text-green-600 font-medium text-sm uppercase tracking-wider transition-colors duration-200;
+  }
+
+  /* Gymshark-style Hero */
+  .hero-gymshark {
+    @apply bg-gray-50 relative overflow-hidden;
+  }
+
+  /* Container */
+  .container-healclinics {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Payment Method Icons */
+  .payment-icons {
+    @apply flex items-center gap-4 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300;
+  }
+
+  /* FAQ Chatbot Styling */
+  .chatbot-container {
+    @apply fixed bottom-6 right-6 z-50;
+  }
+  
+  .chatbot-bubble {
+    @apply bg-black text-white p-4 rounded-full shadow-lg hover:bg-gray-800 transition-colors cursor-pointer;
+  }
+  
+  .chatbot-panel {
+    @apply bg-white border border-gray-200 rounded-lg shadow-xl p-6 w-80 mb-4;
+  }
+
+  /* Account Pages */
+  .account-nav {
+    @apply border-b border-gray-200 pb-4 mb-6;
+  }
+  
+  .account-nav-item {
+    @apply text-gray-600 hover:text-black font-medium text-sm uppercase tracking-wider transition-colors;
+  }
+
+  /* Stock Info */
+  .stock-display {
+    @apply block text-sm text-gray-500 mb-2;
+  }
+  
+  .stock-hidden {
+    display: none !important;
+  }
+}
+
+@layer utilities {
+  /* Text Gradients */
+  .text-gradient-green {
+    background: linear-gradient(135deg, #10b981, #059669);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  /* Product Grid */
+  .product-grid-gymshark {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8;
+  }
+
+  /* ✅ ENHANCED: Toast Animation - Slide in from right */
+  .animate-slide-in-right {
+    animation: slideInRight 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  @keyframes slideInRight {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  /* ✅ NEW: Fade out animation for toast */
+  .animate-fade-out {
+    animation: fadeOut 0.3s ease-in-out forwards;
+  }
+  
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+  }
+
+  /* ✅ NEW: Scale animation for buttons */
+  .animate-scale-up {
+    animation: scaleUp 0.15s ease-out;
+  }
+  
+  @keyframes scaleUp {
+    from {
+      transform: scale(0.95);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+
+  /* Text truncation */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Mobile cart width */
+  @media (max-width: 640px) {
+    .cart-sidebar-mobile {
+      width: 100vw !important;
+    }
+  }
+}
+
+/* Typography Scale */
+.text-hero {
+  @apply text-5xl md:text-6xl lg:text-7xl font-bold leading-tight;
+}
+
+.text-section-title {
+  @apply text-3xl md:text-4xl font-bold mb-6;
+}
+
+.text-product-title {
+  @apply text-lg font-semibold mb-2 transition-colors;
+}
+
+/* ✅ ENHANCED: Toast Notification Styling */
+.toast-notification {
+  @apply fixed top-20 right-6 z-50 bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg flex items-center gap-2;
+  backdrop-filter: blur(10px);
+  box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.1),
+    0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.toast-notification:hover {
+  @apply bg-green-700;
+  transform: translateY(-2px);
+  transition: all 0.2s ease-out;
+}
+
+/* ✅ NEW: Loading spinner animation */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 2s linear infinite;
+}
+
+/* ✅ NEW: Pulse animation for stock indicators */
+.animate-pulse-slow {
+  animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* ✅ NEW: Hover effects for product cards */
+.product-card-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.product-card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.1),
+    0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* ✅ NEW: Focus styles for accessibility */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2;
+}
+
+/* ✅ NEW: Smooth transitions for all interactive elements */
+button, 
+a, 
+.clickable {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+button:active,
+.clickable:active {
+  transform: scale(0.98);
+}
+
+/* ✅ NEW: Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400;
+}
+
+/* ✅ NEW: Selection styling */
+::selection {
+  @apply bg-green-100 text-green-900;
+}
