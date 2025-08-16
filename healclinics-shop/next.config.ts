@@ -64,7 +64,7 @@ const nextConfig = {
   // ✅ DEPLOYMENT: Additional optimizations
   poweredByHeader: false,
   reactStrictMode: true,
-  swcMinify: true,
+  // ✅ REMOVED: swcMinify (deprecated/invalid in Next.js 15+)
 };
 
 module.exports = nextConfig;
