@@ -4,4 +4,3 @@ gunicorn
 psycopg2-binary
 whitenoise
 python-decouple
-django-cors-headers
