@@ -1,6 +1,6 @@
 # 2 Python projects Portfolio
 
-Een complete portfolio van 2 Python projecten:
+Een portfolio van 2 Python projecten:
 
 ## 📋 Projecten
 1. **Heal Clinics** - Webshop voor natuurlijke producten
@@ -10,5 +10,3 @@ Een complete portfolio van 2 Python projecten:
 ## 🛠️ Tech Stack
 - Python, Django, Streamlit
 - PostgreSQL, SQLite
-- Docker, Git, pytest
-- MCP Server voor portfolio tracking
